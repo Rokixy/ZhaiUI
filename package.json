@@ -1,0 +1,23 @@
+{
+  "name": "zhui",
+  "version": "0.0.1",
+  "description": "一个ui框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rokixy/zhui.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "Bill Zhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rokixy/zhui/issues"
+  },
+  "homepage": "https://github.com/Rokixy/zhui#readme"
+}
