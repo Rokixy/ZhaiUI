@@ -1,7 +1,11 @@
 <template>
-  <button class="zh-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <zh-icon class="icon" v-if="icon" :name="icon"></zh-icon>
-    <zh-icon class="loading" v-if="icon" name="loading"></zh-icon>
+  <button
+    class="zh-button"
+    :class="{ [`icon-${iconPosition}`]: true }"
+    @click="$emit('click')"
+  >
+    <zh-icon class="icon" v-if="icon && !loading" :name="icon"></zh-icon>
+    <zh-icon class="loading icon" v-if="loading" name="loading"></zh-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -15,6 +19,10 @@ export default defineComponent({
   setup() {},
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     iconPosition: {
       type: String,
       default: "left",
