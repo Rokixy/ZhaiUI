@@ -1,6 +1,7 @@
 <template>
   <button class="zh-button" :class="{ [`icon-${iconPosition}`]: true }">
     <zh-icon class="icon" v-if="icon" :name="icon"></zh-icon>
+    <zh-icon class="loading" v-if="icon" name="loading"></zh-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -26,6 +27,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .zh-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -63,6 +72,9 @@ export default defineComponent({
     > .content {
       order: 1;
     }
+  }
+  .loading {
+    animation: spin 1s infinite linear;
   }
 }
 </style>
