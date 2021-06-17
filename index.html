@@ -32,15 +32,32 @@
         body {
             font-size: var(--font-size);
         }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <zh-button></zh-button>
+        <zh-button>
+            按钮
+        </zh-button>
+        <zh-button icon="setting">
+            按钮
+        </zh-button>
+        <zh-button icon="setting" iconPosition="right">
+            按钮
+        </zh-button>
     </div>
 
     <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_2616778_dabw1rrl2kq.js"></script>
 </body>
 
 </html>
