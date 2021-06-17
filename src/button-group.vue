@@ -8,6 +8,16 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {},
+  mounted() {
+    for (let node of this.$el.children) {
+      let name = node.nodeName.toLowerCase();
+      if (name !== "button") {
+        console.warn(
+          `zh-button-group 的子元素应该全是 zh-button，但你写的是 ${name}`
+        );
+      }
+    }
+  },
 });
 </script>
 <style lang="scss" scoped>
