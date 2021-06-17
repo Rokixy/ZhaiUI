@@ -21,6 +21,18 @@
   },
   "homepage": "https://github.com/Rokixy/zhui#readme",
   "dependencies": {
-    "vue": "^2.6.14"
+    "@vue/composition-api": "^1.0.0-rc.11",
+    "vue": "^2.6.14",
+    "vue-hot-reload-api": "^2.3.4"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.2.2",
+    "node-sass": "^6.0.0",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.35.1",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
