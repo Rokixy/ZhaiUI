@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Rokixy/zhui/issues"
   },
-  "homepage": "https://github.com/Rokixy/zhui#readme"
+  "homepage": "https://github.com/Rokixy/zhui#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
 }
