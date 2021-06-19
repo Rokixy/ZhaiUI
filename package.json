@@ -1,5 +1,5 @@
 {
-  "name": "zhui",
+  "name": "zhai-ui",
   "version": "0.0.1",
   "description": "一个ui框架",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "vue",
     "ui"
   ],
-  "author": "Bill Zhu",
+  "author": "Rokixy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Rokixy/zhui/issues"
