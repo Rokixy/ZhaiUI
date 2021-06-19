@@ -5,6 +5,7 @@
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";
+import "./svg";
 
 export default defineComponent({
   setup() {},
