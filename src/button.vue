@@ -14,9 +14,11 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
+import Icon from "./icon.vue";
 
 export default defineComponent({
   setup() {},
+  components: { "zh-icon": Icon },
   props: {
     icon: {},
     loading: {
