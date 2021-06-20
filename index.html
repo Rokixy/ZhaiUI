@@ -32,24 +32,40 @@
         body {
             font-size: var(--font-size);
         }
+
+        .box {
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <zh-button :loading="loading1" @click="loading1=!loading1">
-            按钮
-        </zh-button>
-        <zh-button icon="setting" :loading="loading2" @click="loading2=!loading2">
-            按钮
-        </zh-button>
-        <zh-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
-            按钮
-        </zh-button>
-        <zh-button-group>
-            <zh-button icon="left">上一页</zh-button>
-            <zh-button icon="right" icon-position="right">下一页</zh-button>
-        </zh-button-group>
+        <div class="box">
+            <zh-input value="宅" disabled></zh-input>
+            <zh-input value="宅" readonly></zh-input>
+            <zh-input value="宅"></zh-input>
+        </div>
+        <div class="box">
+            <zh-input value="宅" error='姓名不能少于两个字'></zh-input>
+            <zh-input value="宅宅" success></zh-input>
+            <zh-input value="宅宅" tips="请输入不少于两个字"></zh-input>
+        </div>
+        <div class="box" style="margin: 20px;">
+            <zh-button :loading="loading1" @click="loading1=!loading1">
+                按钮
+            </zh-button>
+            <zh-button icon="setting" :loading="loading2" @click="loading2=!loading2">
+                按钮
+            </zh-button>
+            <zh-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
+                按钮
+            </zh-button>
+            <zh-button-group>
+                <zh-button icon="left">上一页</zh-button>
+                <zh-button icon="right" icon-position="right">下一页</zh-button>
+            </zh-button-group>
+        </div>
     </div>
 
     <script src="./src/app.js"></script>
