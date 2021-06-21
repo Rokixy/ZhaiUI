@@ -41,25 +41,34 @@
 
 <body>
     <div id="app">
-        <div class="box">
+        <div class="box" style="border: 1px solid black">
             <zh-row>
-                <zh-col> </zh-col>
-                <zh-col> </zh-col>
+                <zh-col>1</zh-col>
+                <zh-col>2</zh-col>
             </zh-row>
             <zh-row>
-                <zh-col> </zh-col>
-                <zh-col> </zh-col>
-                <zh-col> </zh-col>
+                <zh-col>1</zh-col>
+                <zh-col>2</zh-col>
+                <zh-col>3</zh-col>
+            </zh-row>
+            <zh-row gutter="20">
+                <zh-col>1</zh-col>
+                <zh-col>2</zh-col>
+                <zh-col>3</zh-col>
+                <zh-col>4</zh-col>
             </zh-row>
             <zh-row>
-                <zh-col> </zh-col>
-                <zh-col> </zh-col>
-                <zh-col> </zh-col>
-                <zh-col> </zh-col>
+                <zh-col span='2'>1</zh-col>
+                <zh-col span='22'>2</zh-col>
             </zh-row>
             <zh-row>
-                <zh-col span='2'> </zh-col>
-                <zh-col span='22'> </zh-col>
+                <zh-col span='2'>1</zh-col>
+                <zh-col span='20' offset='2'>2</zh-col>
+            </zh-row>
+            <zh-row>
+                <zh-col span='4'>1</zh-col>
+                <zh-col span='10' offset='5'>2</zh-col>
+                <zh-col span='2' offset='3'>3</zh-col>
             </zh-row>
         </div>
         <div class="box">
