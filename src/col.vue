@@ -39,10 +39,10 @@ export default defineComponent({
       }
       let array = [];
       if (obj.span) {
-        array.push(`${str}-span-${obj.span}`);
+        array.push(`${str}span-${obj.span}`);
       }
       if (obj.offset) {
-        array.push(`${str}-offset-${obj.offset}`);
+        array.push(`${str}offset-${obj.offset}`);
       }
       return array;
     },
@@ -53,10 +53,10 @@ export default defineComponent({
       let createClasses = this.createClasses;
       return [
         ...createClasses({ span, offset }),
-        ...createClasses(phone, "phone"),
-        ...createClasses(ipad, "ipad"),
-        ...createClasses(narrowPc, "narrowPc"),
-        ...createClasses(widePc, "widePc"),
+        ...createClasses(phone, "phone-"),
+        ...createClasses(ipad, "ipad-"),
+        ...createClasses(narrowPc, "narrowPc-"),
+        ...createClasses(widePc, "widePc-"),
       ];
     },
     colStyle() {
