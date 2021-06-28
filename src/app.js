@@ -4,12 +4,22 @@ import ButtonGroup from './button-group'
 import Input from './input'
 import Row from './row'
 import Col from './col'
+import Layout from './layout'
+import Header from './Header'
+import Content from './content'
+import Sider from './sider'
+import Footer from './footer'
 
 Vue.component('zh-button', Button)
 Vue.component('zh-button-group', ButtonGroup)
 Vue.component('zh-input', Input)
 Vue.component('zh-row', Row)
 Vue.component('zh-col', Col)
+Vue.component('zh-layout', Layout)
+Vue.component('zh-header', Header)
+Vue.component('zh-content', Content)
+Vue.component('zh-sider', Sider)
+Vue.component('zh-footer', Footer)
 
 new Vue({
     el: '#app',
