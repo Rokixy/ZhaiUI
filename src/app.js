@@ -31,5 +31,30 @@ new Vue({
         loading1: false,
         loading2: false,
         loading3: false,
+    },
+    methods: {
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
+        showToast(position) {
+            let callback = () => { console.log('hi') }
+            this.$toast('内容', {
+                position,
+                closeButton: {
+                    text: '关闭',
+                    callback
+                },
+                autoClose: false,
+            })
+        }
     }
+
 })
+
+// let closeButton = vm.$el.querySelector('.close')

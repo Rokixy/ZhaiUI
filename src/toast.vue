@@ -2,7 +2,7 @@
   <div class="wrapper" :class="toastClasses">
     <div class="toast" ref="toast">
       <div class="message">
-        <slot v-if="!enabelHtml"></slot>
+        <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
       </div>
       <div class="line" ref="line"></div>
@@ -20,12 +20,11 @@ export default defineComponent({
   setup() {},
   props: {
     autoClose: {
-      type: Boolean,
-      default: true,
-    },
-    autoCloseDelay: {
-      type: Number,
+      type: [Boolean, Number],
       default: 3,
+      validator(value) {
+        return value === false || typeof value === "number";
+      },
     },
     closeButton: {
       type: Object,
@@ -36,13 +35,13 @@ export default defineComponent({
         };
       },
     },
-    enabelHtml: {
+    enableHtml: {
       type: Boolean,
       default: false,
     },
     position: {
       type: String,
-      default: top,
+      default: "top",
       validator(value) {
         return ["top", "bottom", "middle"].indexOf(value) >= 0;
       },
@@ -71,7 +70,7 @@ export default defineComponent({
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     close() {
@@ -130,7 +129,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   &.position-top {
     top: 0;
     .toast {
-      animation: slide-in $animation-duration;
+      animation: slide-down $animation-duration;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
