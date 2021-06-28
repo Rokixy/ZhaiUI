@@ -5,6 +5,4 @@
 </template>
 
 <style lang="scss" scoped>
-.sider {
-}
 </style>
