@@ -9,6 +9,8 @@ import Header from './Header'
 import Content from './content'
 import Sider from './sider'
 import Footer from './footer'
+import Toast from './toast'
+import plugin from './plugin'
 
 Vue.component('zh-button', Button)
 Vue.component('zh-button-group', ButtonGroup)
@@ -20,6 +22,8 @@ Vue.component('zh-header', Header)
 Vue.component('zh-content', Content)
 Vue.component('zh-sider', Sider)
 Vue.component('zh-footer', Footer)
+Vue.component('zh-toast', Toast)
+Vue.use(plugin)
 
 new Vue({
     el: '#app',
