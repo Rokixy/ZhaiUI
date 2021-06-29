@@ -37,7 +37,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .tabs-content {
   &.active {
-    background: red;
+    padding: 1em;
   }
 }
 </style>

@@ -34,7 +34,18 @@ export default defineComponent({
     };
   },
   mounted() {
-    this.eventBus.$emit("update:selected", this.selected);
+    this.$children.forEach((vm) => {
+      if (vm.$options.name === "zh-tabs-head") {
+        vm.$children.forEach((item) => {
+          if (
+            item.$options.name === "zh-tabs-item" &&
+            item.name === this.selected
+          ) {
+            this.eventBus.$emit("update:selected", this.selected, item);
+          }
+        });
+      }
+    });
   },
 });
 </script>
