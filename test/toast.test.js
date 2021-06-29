@@ -28,7 +28,7 @@ describe('Toast', () => {
             })
         })
 
-        it('接受 closeButton', () => {
+        it('接受 closeButton', (done) => {
             const callback = sinon.fake()
             const Constructor = Vue.extend(Toast)
             const vm = new Constructor({
@@ -41,8 +41,11 @@ describe('Toast', () => {
             }).$mount()
             let closeButton = vm.$el.querySelector('.close')
             expect(closeButton.textContent.trim()).to.eq('text')
-            closeButton.click()     // 自动测试通过，但 chrome headless 报错
-            expect(callback).to.have.been.called
+            setTimeout(() => {
+                closeButton.click()
+                expect(callback).to.have.been.called
+                done()
+            }, 200)
         })
 
         it('接受 HTML', () => {
