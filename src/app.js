@@ -11,6 +11,12 @@ import Sider from './sider'
 import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
+import Icon from './icon'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsContent from './tabs-content'
 
 Vue.component('zh-button', Button)
 Vue.component('zh-button-group', ButtonGroup)
@@ -23,14 +29,18 @@ Vue.component('zh-content', Content)
 Vue.component('zh-sider', Sider)
 Vue.component('zh-footer', Footer)
 Vue.component('zh-toast', Toast)
+Vue.component('zh-icon', Icon)
+Vue.component('zh-tabs', Tabs)
+Vue.component('zh-tabs-head', TabsHead)
+Vue.component('zh-tabs-body', TabsBody)
+Vue.component('zh-tabs-item', TabsItem)
+Vue.component('zh-tabs-content', TabsContent)
 Vue.use(plugin)
 
 new Vue({
     el: '#app',
     data: {
-        loading1: false,
-        loading2: false,
-        loading3: false,
+        selectedTab: 'tab2',
     },
     methods: {
         showToast1() {
