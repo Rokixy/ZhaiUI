@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item">
+  <div class="tabs-item" @click="aaa">
     <slot></slot>
   </div>
 </template>
@@ -13,6 +13,21 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: false,
+    },
+    name: {
+      type: [String, Number],
+      required: true,
+    },
+  },
+  inject: ["eventBus"],
+  created() {
+    this.eventBus.$on("update:selected", (name) => {
+      console.log(name);
+    });
+  },
+  methods: {
+    aaa() {
+      this.eventBus.$emit("update:selected", this.name);
     },
   },
 });

@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, provide } from "@vue/composition-api";
+import Vue from "vue";
 
 export default defineComponent({
   setup() {},
@@ -21,6 +22,19 @@ export default defineComponent({
         return ["horizon", "vertical"].indexOf(value) >= 0;
       },
     },
+  },
+  data() {
+    return {
+      eventBus: new Vue(),
+    };
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus,
+    };
+  },
+  created() {
+    //this.$emit('update:selected', 'xxx')
   },
 });
 </script>
