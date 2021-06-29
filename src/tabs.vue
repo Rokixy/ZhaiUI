@@ -34,6 +34,13 @@ export default defineComponent({
     };
   },
   mounted() {
+    if (this.$children.lenght === 0) {
+      console &&
+        console.warn &&
+        console.warn(
+          "tabs的子组件应该是tabs-head和tabs-body，可能你忘了写子组件"
+        );
+    }
     this.$children.forEach((vm) => {
       if (vm.$options.name === "zh-tabs-head") {
         vm.$children.forEach((item) => {

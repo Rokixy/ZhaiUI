@@ -1,5 +1,10 @@
 <template>
-  <div class="tabs-item" :class="itemClasses" @click="onClick">
+  <div
+    class="tabs-item"
+    :class="itemClasses"
+    @click="onClick"
+    :data-name="name"
+  >
     <slot></slot>
   </div>
 </template>
@@ -26,9 +31,11 @@ export default defineComponent({
   },
   inject: ["eventBus"],
   mounted() {
-    this.eventBus.$on("update:selected", (name) => {
-      this.active = name === this.name;
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", (name) => {
+        this.active = name === this.name;
+      });
+    }
   },
   computed: {
     itemClasses() {
@@ -43,7 +50,10 @@ export default defineComponent({
       if (this.disabled) {
         return;
       }
-      this.eventBus.$emit("update:selected", this.name, this);
+      if (this.eventBus) {
+        this.eventBus.$emit("update:selected", this.name, this);
+      }
+      this.$emit("click", this);
     },
   },
 });
