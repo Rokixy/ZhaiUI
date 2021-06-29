@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" @click="aaa">
+  <div class="tabs-item" :class="itemClasses" @click="aaa">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +9,11 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {},
+  data() {
+    return {
+      active: false,
+    };
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -20,10 +25,15 @@ export default defineComponent({
     },
   },
   inject: ["eventBus"],
-  created() {
+  mounted() {
     this.eventBus.$on("update:selected", (name) => {
-      console.log(name);
+      this.active = name === this.name;
     });
+  },
+  computed: {
+    itemClasses() {
+      return { active: this.active };
+    },
   },
   methods: {
     aaa() {
@@ -34,4 +44,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.tabs-item {
+  flex-shrink: 0;
+  padding: 0 1em;
+  &.active {
+    background: red;
+  }
+}
 </style>
