@@ -37,23 +37,24 @@ export default defineComponent({
       document.body.appendChild(contentWrapper);
       const { width, height, top, left } =
         triggerWrapper.getBoundingClientRect();
-      if (this.position === "top") {
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top = top + window.scrollY + "px";
-      } else if (this.position === "bottom") {
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top = top + height + window.scrollY + "px";
-      } else if (this.position === "left") {
-        const { height: height2 } = contentWrapper.getBoundingClientRect();
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top =
-          top + window.scrollY + (height - height2) / 2 + "px";
-      } else if (this.position === "right") {
-        const { height: height2 } = contentWrapper.getBoundingClientRect();
-        contentWrapper.style.left = left + width + window.scrollX + "px";
-        contentWrapper.style.top =
-          top + window.scrollY + (height - height2) / 2 + "px";
-      }
+      const { height: height2 } = contentWrapper.getBoundingClientRect();
+      const coordinates = {
+        top: { top: top + window.scrollY, left: left + window.scrollX },
+        bottom: {
+          top: top + height + window.scrollY,
+          left: left + window.scrollX,
+        },
+        left: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.scrollX,
+        },
+        right: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + width + window.scrollX,
+        },
+      };
+      contentWrapper.style.top = coordinates[this.position].top + "px";
+      contentWrapper.style.left = coordinates[this.position].left + "px";
     },
     onClickDocument(e) {
       if (
