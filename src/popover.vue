@@ -1,6 +1,6 @@
 <template>
-  <div class="popover" @click="aaa">
-    <div class="content-wrapper" v-if="visible">
+  <div class="popover" @click.stop="aaa">
+    <div class="content-wrapper" v-if="visible" @click.stop>
       <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -18,6 +18,15 @@ export default defineComponent({
   methods: {
     aaa() {
       this.visible = !this.visible;
+      if (this.visible === true) {
+        this.$nextTick(() => {
+          let eventHandl = () => {
+            this.visible = false;
+            document.removeEventListener("click", eventHandl);
+          };
+          document.addEventListener("click", eventHandl);
+        });
+      }
     },
   },
 });
