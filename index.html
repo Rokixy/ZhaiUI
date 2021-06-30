@@ -41,28 +41,12 @@
 
 <body>
     <div id="app">
-        <div class="box">
-            <zh-tabs :selected.sync="selectedTab">
-                <zh-tabs-head>
-                    <template slot="actions">
-                        <button>
-                            设置
-                        </button>
-                    </template>
-                    <zh-tabs-item name="tab1">
-                        <zh-icon name="setting"></zh-icon>
-                        tab1
-                    </zh-tabs-item>
-                    <zh-tabs-item name="tab2"> tab2 </zh-tabs-item>
-                    <zh-tabs-item name="tab3" disabled> tab3 </zh-tabs-item>
-                </zh-tabs-head>
-                <zh-tabs-body>
-                    <zh-tabs-content name="tab1"> content1 </zh-tabs-content>
-                    <zh-tabs-content name="tab2"> content2 </zh-tabs-content>
-                    <zh-tabs-content name="tab3"> content3 </zh-tabs-content>
-                </zh-tabs-body>
-            </zh-tabs>
-        </div>
+        <zh-popover>
+            <template slot="content">
+                <div>pop</div>
+            </template>
+            <button>click here</button>
+        </zh-popover>
     </div>
 
     <script src="./src/app.js"></script>
