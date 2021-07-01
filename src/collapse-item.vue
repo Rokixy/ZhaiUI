@@ -19,6 +19,10 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -28,23 +32,22 @@ export default defineComponent({
   inject: ["eventBus"],
   mounted() {
     this.eventBus &&
-      this.eventBus.$on("update:selected", (vm) => {
-        if (vm !== this) {
-          this.close();
+      this.eventBus.$on("update:selected", (names) => {
+        if (names.indexOf(this.name) >= 0) {
+          this.open = true;
+        } else {
+          this.open = false;
         }
       });
   },
   methods: {
     toggle() {
       if (this.open) {
-        this.open = false;
+        this.eventBus &&
+          this.eventBus.$emit("update:removeSelected", this.name);
       } else {
-        this.open = true;
-        this.eventBus && this.eventBus.$emit("update:selected", this);
+        this.eventBus && this.eventBus.$emit("update:addSelected", this.name);
       }
-    },
-    close() {
-      this.open = false;
     },
   },
 });

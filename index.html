@@ -41,16 +41,12 @@
 
 <body>
     <div id="app" style="padding: 100px;">
-        <zh-collapse>
-            <zh-collapse-item title='title1'> content 1</zh-collapse-item>
-            <zh-collapse-item title='title2'> content 2</zh-collapse-item>
-            <zh-collapse-item title='title3'> content 3</zh-collapse-item>
+        <zh-collapse :selected.sync="selected">
+            <zh-collapse-item name="1" title='title1'> content 1</zh-collapse-item>
+            <zh-collapse-item name="2" title='title2'> content 2</zh-collapse-item>
+            <zh-collapse-item name="3" title='title3'> content 3</zh-collapse-item>
         </zh-collapse>
-        <zh-collapse single style="margin-top: 50px;">
-            <zh-collapse-item title='title1'> content 1</zh-collapse-item>
-            <zh-collapse-item title='title2'> content 2</zh-collapse-item>
-            <zh-collapse-item title='title3'> content 3</zh-collapse-item>
-        </zh-collapse>
+        {{selected}}
 
     </div>
 
