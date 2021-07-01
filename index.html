@@ -43,8 +43,9 @@
     <div id="app">
         <div style="overflow: hidden; padding: 5px;">
             <zh-popover position="top">
-                <template slot="content">
+                <template slot="content" slot-scope="{close}">
                     <div>pop</div>
+                    <zh-button @click="close">close</zh-button>
                 </template>
                 <zh-button>click here</button>
             </zh-popover>
