@@ -5,11 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rokixy/zhui.git"
+    "url": "git+https://github.com/Rokixy/ZhaiUI.git"
   },
   "keywords": [
     "vue",
@@ -18,9 +20,9 @@
   "author": "Rokixy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rokixy/zhui/issues"
+    "url": "https://github.com/Rokixy/ZhaiUI/issues"
   },
-  "homepage": "https://github.com/Rokixy/zhui#readme",
+  "homepage": "https://github.com/Rokixy/ZhaiUI#readme",
   "dependencies": {
     "@vue/composition-api": "^1.0.0-rc.11",
     "vue": "^2.6.14",
@@ -37,12 +39,14 @@
     "karma-mocha": "^2.0.1",
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^9.0.0",
-    "node-sass": "^6.0.0",
+    "node-sass": "npm:sass",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.35.1",
+    "sass-loader": "^7.0.1",
     "sinon": "^11.1.1",
     "sinon-chai": "^3.7.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vuepress": "^1.8.2"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
