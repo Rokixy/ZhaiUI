@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/ZhaiUI/',
     title: '宅 UI',
     description: '一个基于 Vue2 的 UI 框架',
     themeConfig: {
