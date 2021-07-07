@@ -21,11 +21,13 @@ export default defineComponent({
   data() {
     return {
       code: `
-            <zh-button>默认按钮</zh-button>
-            <zh-button icon="settings">默认按钮</zh-button>
-            <zh-button :loading="true">默认按钮</zh-button>
-            <zh-button disabled>默认按钮</zh-button>
-        `,
+          <zh-button>默认按钮</zh-button>
+          <zh-button icon="settings">默认按钮</zh-button>
+          <zh-button :loading="true">默认按钮</zh-button>
+          <zh-button disabled>默认按钮</zh-button>
+        `
+        .replace(/\t| +/g, "")
+        .trim(),
     };
   },
 });
