@@ -9,6 +9,7 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {},
+  name: "zh-tabs-body",
   inject: ["eventBus"],
 });
 </script>

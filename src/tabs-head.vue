@@ -13,6 +13,7 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {},
+  name: "zh-tabs-head",
   inject: ["eventBus"],
   mounted() {
     this.eventBus.$on("update:selected", (item, vm) => {
