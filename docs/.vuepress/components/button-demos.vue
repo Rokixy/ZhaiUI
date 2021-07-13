@@ -4,8 +4,6 @@
     <zh-button icon="setting">默认按钮</zh-button>
     <zh-button :loading="true">默认按钮</zh-button>
     <zh-button disabled>默认按钮</zh-button>
-
-    <pre><code>{{code}}</code></pre>
   </div>
 </template>
 
@@ -17,18 +15,6 @@ export default defineComponent({
   setup() {},
   components: {
     "zh-button": Button,
-  },
-  data() {
-    return {
-      code: `
-          <zh-button>默认按钮</zh-button>
-          <zh-button icon="settings">默认按钮</zh-button>
-          <zh-button :loading="true">默认按钮</zh-button>
-          <zh-button disabled>默认按钮</zh-button>
-        `
-        .replace(/\t| +/g, "")
-        .trim(),
-    };
   },
 });
 </script>

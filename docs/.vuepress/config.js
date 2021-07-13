@@ -3,14 +3,16 @@ module.exports = {
     title: '宅 UI',
     description: '一个基于 Vue2 的 UI 框架',
     themeConfig: {
+        displayAllHeaders: true,
         nav: [
-            { text: 'Home', link: '/' },
-            { text: 'Guide', link: '/guide/' },
-            { text: 'External', link: 'https://google.com' },
+            { text: '主页', link: '/' },
+            { text: '文档', link: '/guide/' },
+            { text: 'GitHub', link: 'https://github.com/Rokixy/ZhaiUI' },
         ],
         sidebar: [
             {
                 title: '入门',
+                collapsable: false,
                 children: [
                     ['/install/', '安装'],
                     ['/get-started/', '快速上手'],
@@ -18,6 +20,9 @@ module.exports = {
             },
             {
                 title: '组件',
+                sidebarDepth: 0,
+                collapsable: false,
+
                 children: [
                     '/components/button',
                     '/components/tabs',
@@ -26,6 +31,7 @@ module.exports = {
                     '/components/layout',
                     '/components/toast',
                     '/components/popover',
+                    '/components/collapse',
                 ]
             }
         ]
