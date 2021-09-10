@@ -6,13 +6,14 @@ module.exports = {
         displayAllHeaders: true,
         nav: [
             { text: '主页', link: '/' },
-            { text: '文档', link: '/guide/' },
+            { text: '快速上手', link: '/get-started/' },
             { text: 'GitHub', link: 'https://github.com/Rokixy/ZhaiUI' },
         ],
         sidebar: [
             {
                 title: '入门',
                 collapsable: false,
+                sidebarDepth: 0,
                 children: [
                     ['/install/', '安装'],
                     ['/get-started/', '快速上手'],
