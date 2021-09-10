@@ -42,7 +42,7 @@ export default defineComponent({
       const index = selectedCopy.indexOf(name);
       selectedCopy.splice(index, 1);
       this.$emit("update:selected", selectedCopy);
-      this.eventBus.$emit("update:selected", thiselectedCopy);
+      this.eventBus.$emit("update:selected", selectedCopy);
     });
   },
 });
