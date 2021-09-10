@@ -99,12 +99,14 @@ $color-success: #33a954;
   }
   .icon-error {
     fill: $color-error;
+    transform: scale(1.2, 1.2);
   }
   .errorMessage {
     color: $color-error;
   }
   .icon-success {
     fill: $color-success;
+    transform: scale(1.2, 1.2);
   }
   .tips {
     color: #888;
