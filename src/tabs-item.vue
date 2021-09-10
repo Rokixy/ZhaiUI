@@ -61,7 +61,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$blue: blue;
+$active: #3eaf7c;
 $disabled-text-color: grey;
 .tabs-item {
   flex-shrink: 0;
@@ -71,7 +71,7 @@ $disabled-text-color: grey;
   display: flex;
   align-items: center;
   &.active {
-    color: blue;
+    color: $active;
   }
   &.disabled {
     color: $disabled-text-color;

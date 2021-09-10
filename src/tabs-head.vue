@@ -28,7 +28,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 $tab-height: 40px;
-$blue: blue;
+$active: #3eaf7c;
 $border-color: #ddd;
 .tabs-head {
   display: flex;
@@ -39,7 +39,7 @@ $border-color: #ddd;
   > .line {
     position: absolute;
     bottom: 0;
-    border-bottom: 1px solid $blue;
+    border-bottom: 1px solid $active;
     transition: all 300ms;
   }
   > .actions-wrapper {
