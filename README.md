@@ -1,6 +1,6 @@
-# zhai-ui - 基于 Vue 2 的UI框架
+# 宅UI - 基于 Vue 2 的UI组件库
 
-[![Build Status](https://www.travis-ci.com/Rokixy/ZhaiUI.svg?branch=main)](https://www.travis-ci.com/Rokixy/ZhaiUI)
+[![Build Status](https://www.travis-ci.com/Rokixy/ZhaiUI.svg?branch=main)](https://www.travis-ci.com/github/Rokixy/ZhaiUI)
 
 ## 介绍
 
@@ -16,45 +16,49 @@
     *,*::before,*::after{box-sizing: border-box;}
     ```
 
-    你还需要设置默认样式变量，IE 15 及以上浏览器支持此样式。
-    ```
-    html {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-    }
-    ```
-
 2. 安装 zhai-ui
     ```
     npm i --save zhai-ui
     ```
 
 3. 引入 zhai-ui
-    ```
-    import {Button, ButtonGroup, Icon} from 'zhai-ui'
+    ```js
+    import {
+        Button, ButtonGroup, Input, Row, Col, Layout, 
+        Header, Content, Sider, Footer, Toast, Icon, Tabs,
+        TabsHead, TabsBody, TabsItem, TabsContent, Popover,
+        Collapse, CollapseItem, plugin
+    } from 'zhai-ui'
     import 'zhai-ui/dist/index.css'
 
     export default {
         name: 'app',
         components: {
-            'zh-button': Button,
-            'zh-icon': Icon
+            'zh-button':Button,
+            'zh-button-group':ButtonGroup,
+            'zh-input': Input,
+            'zh-row': Row,
+            'zh-col':Col,
+            'zh-layout': Layout,
+            'zh-header': Header,
+            'zh-content': Content,
+            'zh-sider': Sider,
+            'zh-footer': Footer,
+            'zh-toast': Toast,
+            'zh-icon':Icon,
+            'zh-tabs': Tabs,
+            'zh-tabs-head': TabsHead,
+            'zh-tabs-body': TabsBody,
+            'zh-tabs-item': TabsItem,
+            'zh-tabs-content': TabsContent,
+            'zh-popover': Popover,
+            'zh-collapse':Collapse,
+            'zh-collapse-item':CollapseItem,
         }
     }
     ```
 
 ## 文档
-
+[宅 UI 官网](https://rokixy.github.io/ZhaiUI/)
 ## 提问
-
-## 变更记录
-
-## 联系方式
-
-## 贡献代码
+[Issues](https://github.com/Rokixy/ZhaiUI/issues)
