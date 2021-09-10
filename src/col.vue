@@ -72,7 +72,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .col {
-  height: 100px;
   @media (max-width: 576px) {
     $class-prefix: phone-span-;
     @for $n from 1 through 24 {
