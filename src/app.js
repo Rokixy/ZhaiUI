@@ -72,5 +72,3 @@ new Vue({
     }
 
 })
-
-// let closeButton = vm.$el.querySelector('.close')
