@@ -1,15 +1,3 @@
----
-title: 'Popover - 弹出层'
----
-# 弹出层
-## 预览
-&nbsp;
-<ClientOnly>
-    <popover-demos></popover-demos>
-</ClientOnly>
-
-## 使用方法
-```vue
 <template>
   <div class="popover-wrapper">
     <zh-popover position="left">
@@ -45,13 +33,6 @@ export default {
   },
 };
 </script>
-```
 
-## 选项
-Popover 组件有两个选项： position 用于设置显示位置； trigger 用于设置触发事件
-#### 1. position
-<span style='color:#3eaf7c;background-color:#F8F8F8'> position </span> 的可选参数为 
-<span style='color:#3eaf7c;background-color:#F8F8F8'> left </span>/<span style='color:#3eaf7c;background-color:#F8F8F8'> top </span>/<span style='color:#3eaf7c;background-color:#F8F8F8'> bottom </span>/<span style='color:#3eaf7c;background-color:#F8F8F8'> right </span>，默认值为 <span style='color:#3eaf7c;background-color:#F8F8F8'> top </span>。
-#### 2. trigger
-
-<span style='color:#3eaf7c;background-color:#F8F8F8'> trigger </span> 的可选参数为<span style='color:#3eaf7c;background-color:#F8F8F8'> click </span>和<span style='color:#3eaf7c;background-color:#F8F8F8'> hover </span>，默认值为<span style='color:#3eaf7c;background-color:#F8F8F8'> click </span>。
+<style lang="scss" scoped>
+</style>
