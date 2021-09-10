@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="wrapper" ref="wrapper" :class="toastClasses">
     <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
@@ -46,6 +46,13 @@ export default defineComponent({
         return ["top", "bottom", "middle"].indexOf(value) >= 0;
       },
     },
+    zIndex: {
+      type: Number,
+      default: 20,
+      validator(value) {
+        return typeof value === "number";
+      },
+    },
   },
   mounted() {
     this.updateStyle();
@@ -61,6 +68,7 @@ export default defineComponent({
   methods: {
     updateStyle() {
       this.$nextTick(() => {
+        this.$refs.wrapper.style.zIndex = this.zIndex;
         this.$refs.line.style.height = `${
           this.$refs.toast.getBoundingClientRect().height
         }px`;
