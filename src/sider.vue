@@ -4,5 +4,11 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "zh-sider",
+};
+</script>
+
 <style lang="scss" scoped>
 </style>

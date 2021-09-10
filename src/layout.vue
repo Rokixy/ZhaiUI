@@ -8,6 +8,7 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {},
+  name: "zh-layout",
   data() {
     return {
       layoutClass: { hasSider: false },
@@ -16,7 +17,7 @@ export default defineComponent({
   mounted() {
     this.$children.forEach((vm) => {
       if (vm.$options.name === "zh-sider") {
-        this.hasSider = true;
+        this.layoutClass.hasSider = true;
       }
     });
   },
